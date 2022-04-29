@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% load static %}
+    <link rel="shortcut icon" type="x-icon" href="{% static 'images/startlight.ico' %}"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Converter APP</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"/>
+  </head>
+  <body>
+    <header>
+      <h1 id="titulo">Civil Engineering common units converter</h1>
+    </header>
+    <section class="container">
+      <div class="container-section">
+        <div class="converter-title">
+          <h1 id="converter-title">Units</h1>
+        </div>
+        <div>
+          <form action="" method="POST">
+            {% csrf_token %}
+            <div class="form-control-types">
+              {{form.types}}
+            </div>
+            <p></p>
+            <div class="sumbit-control">
+              <div class="from-unit">
+                {{ form.from_unit}}
+              <button type="submit" value="="/>=</button>
+                {{to_unit}}
+              </div>
+            </div>
+            <div id="form-control-types">{{form.unit_types_from}}{{form.unit_types_to}}</div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
