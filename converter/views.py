@@ -19,7 +19,6 @@ def index(request):
         if used_form.is_valid():
             unit_converted = used_form.save()
             from_unit = unit_converted.from_unit
-            # used_form = ConverterForm()
             to_unit = unit_converted.to_unit
             context['to_unit'] = to_unit
             context['from_unit'] = from_unit
@@ -28,7 +27,3 @@ def index(request):
         context['errors'] = used_form.errors
 
         return render(request, template, context)
-
-
-
-
