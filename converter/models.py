@@ -6,7 +6,7 @@ from .tools import  length, pressure
 
 TYPE_CHOICES = [
         ('Length', 'Length'),
-        ('Pressure', 'Pressure'),
+        # ('Pressure', 'Pressure'),
         ]
 
 

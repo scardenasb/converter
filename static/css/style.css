@@ -4,8 +4,7 @@ html {
 
 body{
   margin: 0px;
-  /* background-color: #efefef; */
-  background-color: red;
+  background-color: #efefef;
 }
 
 header {
@@ -22,17 +21,6 @@ header h1 {
 .container {
   width: 400px;
   margin: 0 auto;
-  text-align: center;
-}
-
-#converter-title{
-  background-color: red;
-  color: yellow;
-}
-
-.form-control-types{
-  margin-top: 9px;
-  text-align: center;
 }
 
 .container{
@@ -41,20 +29,64 @@ header h1 {
   border-radius: 0.5rem;
 }
 
-.from-unit{
-  padding: 3rem 2rem;
-  margin-left: 2rem;
-}
 .container:hover{
   box-shadow: 0 0.1rem 0.4rem rgba(0,0,0,0.3);
 }
 
-.placeholder{
-  width: 2px;
-  margin-left: 1rem;
-}
-
-.unit-to{
-  color: black;
+.converter-title {
+  background-color: #161c23;
   border-radius: 0.5rem;
 }
+
+#converter-title {
+  color: white;
+  text-align: center;
+}
+
+#types-title {
+  font-size: 11px;
+  margin: 0 0 0 0.6rem;
+  font-weight: bold;
+}
+
+.types{
+  margin: 0.2rem 1rem 0 0.6rem;
+  padding: 0 2rem 0 0;
+}
+
+.from-unit{
+  padding: 0.2rem 0 0.1rem 0;
+  margin: 0.9rem 0.3rem 0.5rem 0.6rem;
+}
+
+button {
+  margin: 0.1rem 0.1rem 0.1rem 0.1rem;
+  padding: 0.16rem 0 0.12rem 0;
+  width: 2rem;
+}
+
+.form-control-types {
+  margin: 0 1rem 0.5rem 0.6rem;
+  padding: 0 1rem 0 0;
+}
+
+#from-unit{
+  margin: 0 0.4rem 0 0;
+}
+
+.from-to {
+  font-weight: bold;
+  font-size: 11px;
+  margin: 0.4rem 0 0.3rem 0.6rem;
+}
+
+#from {
+  padding: 0 6.2rem 0 0;
+}
+
+#to-unit{
+  font-weight: bold;
+  font-size: 1.1rem;
+  padding: 0.5rem;
+}
+

@@ -4,21 +4,21 @@ from .models import ConverterLength, TYPE_CHOICES, UNIT_CHOICES_LENGTH
 class ConverterForm(forms.ModelForm):
     types = forms.CharField(label='', widget=forms.Select(
         choices=TYPE_CHOICES,
-        attrs={"class": "form-control form-control-types"}
+        attrs={"class": "form-control types"}
         ))
 
     from_unit = forms.FloatField(label='', widget=forms.NumberInput(
-        attrs={"class": "form-control from-unit", "placeholder": "Your unit"}
+        attrs={"class": "form-control from-unit", "placeholder": " Your unit"}
         ))
 
     unit_types_from = forms.CharField(label='', widget=forms.Select(
         choices=UNIT_CHOICES_LENGTH,
-        attrs={"class": "form-control form-control-type-from"}
+        attrs={"class": "form-control form-control-type-from form-control-types"}
     ))
 
     unit_types_to = forms.CharField(label='', widget=forms.Select(
         choices=UNIT_CHOICES_LENGTH,
-        attrs={"class": "form-control form-control-type-to"}
+        attrs={"class": "form-control form-control-type-to form-control-types"}
     ))
 
     class Meta:
