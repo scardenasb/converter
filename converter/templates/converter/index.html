@@ -13,28 +13,26 @@
       <h1 id="titulo">Civil Engineering common units converter</h1>
     </header>
     <section class="container">
-      <div class="container-section">
-        <div class="converter-title">
-          <h1 id="converter-title">Units</h1>
-        </div>
-        <div>
-          <form action="" method="POST">
-            {% csrf_token %}
-            <div class="form-control-types">
-              {{form.types}}
-            </div>
-            <p></p>
-            <div class="sumbit-control">
-              <div class="from-unit">
-                {{ form.from_unit}}
-              <button type="submit" value="="/>=</button>
-                {{to_unit}}
-              </div>
-            </div>
-            <div id="form-control-types">{{form.unit_types_from}}{{form.unit_types_to}}</div>
-          </form>
-        </div>
+      <div class="converter-title">
+        <h1 id="converter-title">Units</h1>
       </div>
+      <form action="" method="POST">
+        {% csrf_token %}
+        <span id="types-title">Types</span>
+        <div >
+          {{form.types}}
+        </div>
+          <div>
+            <span id="from-unit">{{ form.from_unit}}</span>
+            <button type="submit" value="="/>=</button>
+            <span id="to-unit">{{to_unit}}</span>
+          </div>
+          <div class="from-to">
+            <span id="from">From</span>
+            <span id="to">To</span>
+          </div>
+          <div id="form-control-types">{{form.unit_types_from}}{{form.unit_types_to}}</div>
+      </form>
     </section>
   </body>
 </html>

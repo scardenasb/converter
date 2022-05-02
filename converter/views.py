@@ -1,6 +1,5 @@
 from django.shortcuts import render
 from .forms import ConverterForm
-from .models import ConverterLength
 
 # Create your views here.
 
@@ -27,3 +26,7 @@ def index(request):
         context['errors'] = used_form.errors
 
         return render(request, template, context)
+
+
+
+
