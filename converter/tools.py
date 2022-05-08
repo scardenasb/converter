@@ -44,6 +44,7 @@ def length(model_instance):
     return to_unit
 
 
+#TODO: fill with correct pressure and system types units after implement ajax stuff
 def pressure(model_instance):
     if model_instance.unit_types_from == "psi" and model_instance.unit_types_to == "pascal":
         return model_instance.from_unit * 6894.76

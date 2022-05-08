@@ -26,6 +26,7 @@ UNIT_CHOICES_PRESSURE = [
 
 class ConverterLength(models.Model):
 
+    #TODO: check for default values after implement ajax stuff
     to_unit = models.FloatField(unique=False, null=True, blank=True)
     from_unit = models.FloatField(unique=False, blank=False, null=False)
     types = models.CharField(unique=False, max_length=100, null=False, blank=True, default='Length')
