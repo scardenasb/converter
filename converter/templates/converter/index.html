@@ -2,11 +2,7 @@
 <html lang="en">
   <head>
     {% load static %}
-<<<<<<< HEAD
-    <link rel="shortcut icon" type="x-icon" href="{% static 'images/page_ico.ico' %}"/>
-=======
     <link rel="icon" type="image/png" href="{% static 'images/convert.png' %}"/>
->>>>>>> develop
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Converter APP</title>
@@ -20,24 +16,6 @@
       <div class="converter-title">
         <h1 id="converter-title">Units</h1>
       </div>
-<<<<<<< HEAD
-      <form action="" method="POST">
-        {% csrf_token %}
-        <span id="types-title">Types</span>
-        <div >
-          {{form.types}}
-        </div>
-          <div>
-            <span id="from-unit">{{ form.from_unit}}</span>
-            <button type="submit" value="="/>=</button>
-            <span id="to-unit">{{to_unit}}</span>
-          </div>
-          <div class="from-to">
-            <span id="from">From</span>
-            <span id="to">To</span>
-          </div>
-          <div id="form-control-types">{{form.unit_types_from}}{{form.unit_types_to}}</div>
-=======
       <form action='' id='converterForm' method='POST' data-units-url='{% url 'ajax_load_units' %}'>
         {% csrf_token %}
         <span id="types-title">Types</span>
@@ -72,7 +50,6 @@
                   });
               });
           </script>
->>>>>>> develop
       </form>
     </section>
   </body>
