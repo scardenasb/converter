@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     {% load static %}
-    <link rel="shortcut icon" type="x-icon" href="{% static 'images/startlight.ico' %}"/>
+    <link rel="icon" type="image/png" href="{% static 'images/convert.png' %}"/>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Converter APP</title>
@@ -10,28 +10,46 @@
   </head>
   <body>
     <header>
-      <h1 id="titulo">Civil Engineering common units converter</h1>
+      <h1 id="titulo">Common Engineering units converter</h1>
     </header>
     <section class="container">
       <div class="converter-title">
         <h1 id="converter-title">Units</h1>
       </div>
-      <form action="" method="POST">
+      <form action='' id='converterForm' method='POST' data-units-url='{% url 'ajax_load_units' %}'>
         {% csrf_token %}
         <span id="types-title">Types</span>
-        <div >
-          {{form.types}}
+        <div id="types">
+          {{ form.type }}
         </div>
           <div>
-            <span id="from-unit">{{ form.from_unit}}</span>
+            <span id="from-unit">{{ form.from_unit }}</span>
             <button type="submit" value="="/>=</button>
-            <span id="to-unit">{{to_unit}}</span>
+            <span id="to-unit">{{ to_unit }}</span>
           </div>
-          <div class="from-to">
+          <div class="from-to-titles">
             <span id="from">From</span>
             <span id="to">To</span>
           </div>
-          <div id="form-control-types">{{form.unit_types_from}}{{form.unit_types_to}}</div>
+          <div id="form-control-units">{{ form.unit }}{{ form.unit_to }}</div>
+          <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+          <script>
+              $("#id_type").change(function () {
+                  const url = $("#converterForm").attr("data-units-url");
+                  const typeId = $(this).val();
+
+                  $.ajax({
+                      url: url,
+                      data: {
+                          'type_id': typeId
+                      },
+                      success: function (data) {
+                          $("#id_unit").html(data);
+                          $("#id_unit_to").html(data);
+                      }
+                  });
+              });
+          </script>
       </form>
     </section>
   </body>

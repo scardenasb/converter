@@ -1,3 +1,5 @@
+/* TODO: Clean deprecated id's and classes */
+/* TODO: Make css more responsive */
 html {
   font-family: 'Montserrat', sans-serif;
 }
@@ -19,7 +21,7 @@ header h1 {
 }
 
 .container {
-  width: 400px;
+  width: 550px;
   margin: 0 auto;
 }
 
@@ -45,17 +47,17 @@ header h1 {
 
 #types-title {
   font-size: 11px;
-  margin: 0 0 0 0.6rem;
+  margin: 0 0 0 0.3rem;
   font-weight: bold;
 }
 
-.types{
-  margin: 0.2rem 1rem 0 0.6rem;
+#types{
+  margin: 0.2rem 1rem 0 0.2rem;
   padding: 0 2rem 0 0;
 }
 
-.from-unit{
-  padding: 0.2rem 0 0.1rem 0;
+#from-unit{
+  padding: 0.2rem 0 0.1rem 0.2rem;
   margin: 0.9rem 0.3rem 0.5rem 0.6rem;
 }
 
@@ -65,23 +67,23 @@ button {
   width: 2rem;
 }
 
-.form-control-types {
-  margin: 0 1rem 0.5rem 0.6rem;
-  padding: 0 1rem 0 0;
+#form-control-units {
+  margin: 0 1rem 0.2rem 0.2rem;
+  padding: 0 1rem 0.3rem 0;
 }
 
 #from-unit{
   margin: 0 0.4rem 0 0;
 }
 
-.from-to {
+.from-to-titles {
   font-weight: bold;
   font-size: 11px;
-  margin: 0.4rem 0 0.3rem 0.6rem;
+  margin: 0.4rem 0 0.3rem 0.3rem;
 }
 
 #from {
-  padding: 0 6.2rem 0 0;
+  padding: 0 3.6rem 0 0;
 }
 
 #to-unit{
@@ -90,3 +92,9 @@ button {
   padding: 0.5rem;
 }
 
+/* TODO: To delete spinners in FloatField (is this the correct way?) */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
