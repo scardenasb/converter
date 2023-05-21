@@ -12,7 +12,6 @@
 
 <br></br>
 ## Preview
-![image](https://github.com/scardenasb/converter/assets/84429399/e3d9e348-9e0f-4f59-a4b3-39e03c858010)
 
 
 > TODOs: Incorporate different unit systems (si, american, etc.). 
