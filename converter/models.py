@@ -1,51 +1,52 @@
 from django.db import models
-from .tools import  length, pressure, volume
+from django.utils.translation import gettext as _
 
-# Create your models here.
+
 class Type(models.Model):
-    name = models.CharField(max_length=50, default=1)
+    """
+    Model that store unit types.
+    """
+
+    description = models.CharField(
+        max_length=30, null=True, blank=True, verbose_name=_("Description")
+    )
+    code = models.IntegerField(
+        verbose_name=_("Code"),
+        null=True,
+        blank=True,
+    )
+
+    class Meta:
+        verbose_name = _("Type")
+        verbose_name_plural = _("Types")
 
     def __str__(self):
-        return self.name
+        name = '{code} - {description}'.format(code=self.code, description=self.description)
+        return name
 
 
 class Unit(models.Model):
-    name = models.CharField(max_length=50)
-    type = models.ForeignKey(Type, on_delete=models.CASCADE)
+    """
+    Model to create new unit, associated with type, requires exponent.
+    """
+
+    abbreviation = models.CharField(verbose_name=_("Abbreviation"),null=True, blank=True, max_length=15)
+    unit_type = models.ForeignKey(
+        'Type',
+        verbose_name=_("Unit Type"),
+        null=True,
+        blank=True,
+        on_delete=models.CASCADE,
+    )
+    unit_exponent = models.FloatField(
+        verbose_name=_("Exponent unit"),
+        null=True,
+        blank=True,
+    )
+
+    class Meta:
+        verbose_name = _("Unit")
+        verbose_name_plural = _("Units")
 
     def __str__(self):
-        return self.name
-
-
-class UnitTo(models.Model):
-    name = models.CharField(max_length=50)
-    type = models.ForeignKey(Type, on_delete=models.CASCADE)
-
-    def __str__(self):
-        return self.name
-
-
-# TODO: Add new system options SI and AES (create a feature branch)
-class ConverterLength(models.Model):
-    type = models.ForeignKey(Type, on_delete=models.SET_NULL, blank=True, null=True)
-    from_unit = models.FloatField(unique=False, blank=True, null=True)
-    to_unit = models.CharField(max_length=30, unique=False, blank=True, null=True)
-    unit = models.ForeignKey(Unit, on_delete=models.SET_NULL, blank=True, null=True)
-    unit_to = models.ForeignKey(UnitTo, on_delete=models.SET_NULL, blank=True, null=True)
-
-    def __str__(self):
-        return f'from {self.from_unit} to {self.to_unit}'
-
-    def save(self, *args, **kwargs):
-
-        if not self.to_unit:
-            if self.type_id == 1:
-                self.to_unit = length(self)
-
-            elif self.type_id == 2:
-                self.to_unit = pressure(self)
-
-            elif self.type_id == 3:
-                self.to_unit = volume(self)
-
-        super().save(*args, **kwargs)
+        return self.abbreviation

@@ -1,10 +1,10 @@
 /* TODO: Clean deprecated id's and classes */
 /* TODO: Make css more responsive */
 html {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Inconsolata', sans-serif;
 }
 
-body{
+body {
   margin: 0px;
   background-color: #efefef;
 }
@@ -21,18 +21,74 @@ header h1 {
 }
 
 .container {
-  width: 550px;
+  width: 40%;
+  min-width: 680px;
   margin: 0 auto;
+  padding: 0;
 }
 
-.container{
-  transition: box-shadow 0.2s ease;
+.container {
+  /*transition: box-shadow 0.2s ease;*/
   background-color: #bfc9ca;
   border-radius: 0.5rem;
 }
 
-.container:hover{
-  box-shadow: 0 0.1rem 0.4rem rgba(0,0,0,0.3);
+.box {
+  width: 350px;
+  display: flex;
+  margin: 0 10px 0 10px;
+  font-weight: 700;
+}
+
+.button {
+  margin: 10px 30px 10px 20px;
+  padding: 5px 40px;
+  box-shadow: 0 0.1rem 0.4rem rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s ease;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #161c23;
+  color: #FFF;
+}
+
+.button-middle {
+  display: flex;
+  width: 400px;
+  align-items: center;
+  vertical-align: middle;
+  margin: 2px;
+}
+
+.selects {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  margin-left: 3px;
+}
+
+.to {
+  margin-left: 2rem
+}
+
+#id_unit_value {
+  margin: 10px 0 10px 0;
+  padding: 10px 40px 10px 0;
+  border-radius: 5px;
+}
+
+#id_unit_value::placeholder {
+  font-size: 15px
+}
+
+.result {
+  width: 300px
+}
+
+form {
+  margin: 0;
+  padding: 0;
 }
 
 .converter-title {
@@ -45,51 +101,15 @@ header h1 {
   text-align: center;
 }
 
-#types-title {
-  font-size: 11px;
-  margin: 0 0 0 0.3rem;
-  font-weight: bold;
-}
-
-#types{
-  margin: 0.2rem 1rem 0 0.2rem;
-  padding: 0 2rem 0 0;
-}
-
-#from-unit{
-  padding: 0.2rem 0 0.1rem 0.2rem;
-  margin: 0.9rem 0.3rem 0.5rem 0.6rem;
-}
-
-button {
-  margin: 0.1rem 0.1rem 0.1rem 0.1rem;
-  padding: 0.16rem 0 0.12rem 0;
-  width: 2rem;
-}
-
-#form-control-units {
-  margin: 0 1rem 0.2rem 0.2rem;
-  padding: 0 1rem 0.3rem 0;
-}
-
-#from-unit{
-  margin: 0 0.4rem 0 0;
-}
-
-.from-to-titles {
-  font-weight: bold;
-  font-size: 11px;
-  margin: 0.6rem 0 0.2rem 0.3rem;
-}
-
-#from {
-  padding: 0 3.6rem 0 0;
-}
-
-#to-unit{
-  font-weight: bold;
-  font-size: 1.1rem;
-  padding: 0.5rem;
+.border-group-style {
+  border-color: #161c23;
+  border-style: solid;
+  padding-left: 8px;
+  padding-right: 3px;
+  padding-bottom: 3px;
+  border-width: thin;
+  border-radius: 5px;
+  width: 170px;
 }
 
 /* TODO: To delete spinners in FloatField (is this the correct way?) */

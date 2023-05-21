@@ -1,0 +1,23 @@
+{% extends 'converter/base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% load bootstrap4 %}
+
+
+{% block content %}
+<div class="container justify-content-center">
+  <div class="converter-title">
+    <h1 id="converter-title">Panel</h1>
+  </div>
+  <div class="box">
+    <form class="form-parsley" method='post'>
+      {% csrf_token %}
+      {% crispy form %}
+    </form>
+  </div>
+</div>
+
+{% endblock content %}
+
+{% block javascripts %}
+{% endblock javascripts %}

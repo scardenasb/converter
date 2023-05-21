@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!--Icon-->
+    <link rel="icon" type="image/png" href="{% static 'images/convert.png' %}"/>
+
+    <!--Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&display=swap" rel="stylesheet">
+    <!--<link rel="preconnect" href="https://fonts.googleapis.com">-->
+    <!--<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Converter APP</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"/>
+    <!--Select2-->
+    <!--<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />-->
+    <!--<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>-->
+    <!--<link rel="stylesheet" type="text/css" href="{% static 'css/select2-bootstrap4.css' %}" />-->
+    <!--Select2ToTree-->
+    <!--<link rel="stylesheet" href="{% static 'css/select2totree.css' %}"/>-->
+    <!--<script src="{% static 'js/select2totree.js' %}"></script>-->
+    <!--Jquery-->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  </head>
+
+  <body>
+    <header>
+      <h1 id="titulo">Engineering unit converter</h1>
+    </header>
+        {% block content %}
+        {% endblock content %}
+  </body>
+</html>
+
+{% block javascripts %}
+{% endblock javascripts %}
